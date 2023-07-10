@@ -1,0 +1,34 @@
+$MyPageFontColor: #58595b;
+
+.NicknameChageContainer {
+    width: 402px;
+    margin: 20px auto;
+
+    h3 {
+        color: $MyPageFontColor;
+        font-size: 20px;
+    }
+
+    .userId {
+        span {
+            color: $MyPageFontColor;
+            font-size: 22px;
+        }
+    }
+
+    .nicknameChage {
+        margin-top: 36px;
+        .nicknameInput {
+            width: 402px;
+            height: 45px;
+            font-size: 20px;
+            outline: none;
+            padding-left: 30px;
+            border-radius: 7px;
+            border: 1px solid #abaeb5;
+            ::placeholder {
+                color: #abaeb5;
+            }
+        }
+    }
+}

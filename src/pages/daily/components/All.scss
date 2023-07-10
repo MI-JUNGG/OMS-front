@@ -1,0 +1,13 @@
+.flex {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    .timeBox {
+        width: 110px;
+        text-align: center;
+        // .test {
+        // }
+    }
+}

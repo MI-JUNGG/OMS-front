@@ -1,0 +1,13 @@
+.createted {
+    // position: absolute;
+    // top: 50%;
+    // left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid black;
+    width: 200px;
+    height: 100px;
+    // margin-right: 30px;
+    // margin-left: 10px;
+    background-color: pink;
+    z-index: 5;
+}

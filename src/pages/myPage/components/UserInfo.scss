@@ -1,0 +1,60 @@
+$MyPageFontColor: #58595b;
+
+.userInfoContainer {
+    width: 79vw;
+    min-width: 600px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding-bottom: 50px;
+
+    .userInfoBox {
+        width: 600px;
+        height: 490px;
+
+        .contentSelector {
+            display: flex;
+            text-align: center;
+
+            .active {
+                border-bottom: 2px solid #abaeb5;
+            }
+            .inactive {
+                border-bottom: 0.3px solid #abaeb5;
+            }
+
+            h2 {
+                width: 50%;
+                color: $MyPageFontColor;
+                cursor: pointer;
+                font-size: 30px;
+
+                height: 65px;
+            }
+        }
+
+        .myPageContent {
+            display: flex;
+            justify-content: center;
+        }
+
+        .buttonZone {
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+
+            .SubButton {
+                background-color: #547aff;
+                border-radius: 7px;
+                width: 402px;
+                height: 60px;
+                color: #ffffff;
+                font-size: 24px;
+                border: none;
+                cursor: pointer;
+            }
+        }
+    }
+}

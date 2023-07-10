@@ -1,0 +1,66 @@
+$MainColor: #547aff;
+$FontColor: #ffffff;
+
+.myPageContainer {
+    display: flex;
+
+    .myPageNav {
+        flex-direction: column;
+        width: 314px;
+        min-width: 314px;
+        height: 100vh;
+        background-color: $MainColor;
+        border-radius: 0 15px 15px 0;
+        color: $FontColor;
+
+        .settingNavTop {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 1px solid #ffffff;
+            height: 107px;
+
+            .logZone {
+                flex-direction: column;
+                margin-left: 13px;
+                font-size: 18px;
+
+                .logOutZone {
+                    display: flex;
+                    margin-top: 8px;
+                    font-size: 12px;
+
+                    span {
+                        cursor: pointer;
+                    }
+
+                    .withDrawal {
+                        margin-left: 22px;
+                    }
+                }
+            }
+        }
+
+        .pageState {
+            padding: 17px 0 0 34px;
+
+            .selectState {
+                border-left: 2px solid #ffffff;
+                padding-left: 8px;
+            }
+
+            div {
+                padding-left: 10px;
+                margin-bottom: 30px;
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+
+                span {
+                    margin-left: 10px;
+                    font-size: 18px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,142 @@
+$mainColor: #547aff;
+
+.textSelectorContainer {
+    display: flex;
+    justify-content: space-between;
+    border-top: 0.3px solid #abaeb5;
+
+    .textSelectorZone {
+        flex-direction: column;
+
+        .textStyleSelectZone {
+            margin-top: 35px;
+            h3 {
+                font-size: 22px;
+            }
+
+            .textStyleSelect {
+                display: flex;
+
+                div {
+                    display: flex;
+                    width: 87px;
+                    height: 44px;
+                    border: 1px solid $mainColor;
+                    color: $mainColor;
+                    border-radius: 15px;
+                    text-align: center;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 15;
+                    margin-right: 15px;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .textColorSelectZone {
+            margin-top: 32px;
+            h3 {
+                font-size: 22px;
+            }
+
+            .textColorSelect {
+                display: flex;
+
+                .textColor {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 158px;
+                    height: 57px;
+                    border-radius: 15px;
+                    border: 1px solid $mainColor;
+                    margin-right: 49px;
+                    cursor: pointer;
+
+                    div {
+                        width: 127px;
+                        height: 24px;
+                        background-color: #f3effe;
+                        color: #9747ff;
+                        padding-left: 10px;
+                        border-left: 2px solid #9747ff;
+
+                        span {
+                            font-size: 13px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .blockColorSelctZone {
+            margin-top: 32px;
+            h3 {
+                font-size: 22px;
+                margin-bottom: 30px;
+            }
+
+            .blockColorSelect {
+                display: flex;
+                .blockColorVivid {
+                    cursor: pointer;
+                }
+
+                .blockColorVivid {
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 100px;
+                    margin-right: 22px;
+                    cursor: pointer;
+                    border: 1px solid lightgray;
+                }
+                .moreColor {
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    .textPreviewContainer {
+        border: 0.3px solid #abaeb5;
+        width: 490px;
+        height: 337px;
+        margin-top: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: var(--textPreviewFontColor);
+
+        .textPreview {
+            flex-direction: column;
+
+            font-size: 13px;
+            width: 230px;
+            // color: #9747ff;
+
+            .textPreviewCard_1 {
+                display: flex;
+                align-items: center;
+                height: 35px;
+                border-left: 3px solid var(--textPreviewMainColor);
+                background-color: var(--textPreviewBGColor);
+                margin-bottom: 20px;
+                padding-left: 15px;
+            }
+
+            .textPreviewCard_2 {
+                height: 68px;
+                background-color: var(--textPreviewBGColor);
+                margin-bottom: 20px;
+                padding: 10px 0 0 15px;
+            }
+
+            .textPreviewCard_3 {
+                height: 137px;
+                background-color: var(--textPreviewBGColor);
+                padding: 10px 0 0 15px;
+            }
+        }
+    }
+}

@@ -1,0 +1,33 @@
+#repeatType {
+    margin-top: 10px;
+    min-width: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .repeatBot {
+        border-radius: 16px;
+        border: none;
+        background-color: beige;
+        height: 25px;
+        width: 150px;
+        text-align: center;
+        z-index: 100;
+        #repeatText {
+            text-align: center;
+            height: 25px;
+            font-size: 15px;
+            border: none;
+            background-color: beige;
+        }
+    }
+
+    .limitDate {
+        width: 200px;
+        border-radius: 16px;
+        background-color: beige;
+        border: none;
+        height: 25px;
+        margin: auto;
+    }
+}

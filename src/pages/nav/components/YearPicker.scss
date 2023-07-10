@@ -1,0 +1,46 @@
+.year {
+    height: 45px;
+    background-color: white;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 5px;
+    margin-right: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+    .yearSelect {
+        appearance: none;
+        border: none;
+        font-size: 22px;
+        color: gray;
+        outline-style: none;
+        width: 80px;
+        text-align: center;
+        // padding: 0 22px 0 5px;
+        background-color: white;
+
+        cursor: pointer;
+
+        &::-webkit-scrollbar {
+            width: 7px;
+            border-radius: 15px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 15px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: #cacaca;
+            border-radius: 15px;
+        }
+
+        option {
+            background-color: #f2f2f2;
+            font-size: 18px;
+            border-radius: 5px;
+        }
+    }
+}

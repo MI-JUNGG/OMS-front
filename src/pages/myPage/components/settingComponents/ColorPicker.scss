@@ -1,0 +1,115 @@
+$mainColor: #547aff;
+$textColor: #ffffff;
+
+.colorPickerWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 55%;
+    left: 58%;
+    z-index: 1;
+    .colorPickerContainer {
+        width: 264px;
+        // height: 346px;
+        background-color: #ffffff;
+        display: flex;
+        align-items: center;
+        border-radius: 8px;
+        box-shadow: 5px 5px 5px 5px rgba(168, 168, 168, 0.5);
+        flex-direction: column;
+
+        .colorTitle {
+            margin: 11px 15px;
+
+            span {
+                font-size: 8px;
+                color: #abaeb5;
+            }
+
+            .colorList {
+                width: 246px;
+
+                height: 30px;
+                display: flex;
+
+                border-radius: 17px;
+                justify-content: space-around;
+                align-items: center;
+                cursor: pointer;
+
+                .colorOfColorList {
+                    width: 24px;
+                    height: 24px;
+                    border-radius: 100px;
+                }
+                .customPaletteld {
+                    width: 24px;
+                    height: 24px;
+                    border-radius: 100px;
+                    border: 1px lightgray solid;
+                }
+            }
+            .selected {
+                width: 246px;
+
+                height: 30px;
+                display: flex;
+                border: 1px solid #dedfdf;
+                border-radius: 17px;
+                justify-content: space-around;
+                align-items: center;
+                cursor: pointer;
+
+                .colorOfColorList {
+                    width: 24px;
+                    height: 24px;
+                    border-radius: 100px;
+                }
+                .customPaletteld {
+                    width: 24px;
+                    height: 24px;
+                    border-radius: 100px;
+                    border: 1px lightgray solid;
+                }
+            }
+        }
+    }
+    .colorPickerBtn {
+        width: 228px;
+        height: 23px;
+        border-radius: 50px;
+        background-color: $mainColor;
+        color: #ffffff;
+        font-size: 12px;
+        border: none;
+        margin: 20px auto 7px;
+        cursor: pointer;
+    }
+    .customPickerBtn {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 13px;
+
+        button {
+            width: 228px;
+            height: 23px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 12px;
+            border: 1px solid $mainColor;
+        }
+
+        .customPickerSelectBtn {
+            background-color: $mainColor;
+            color: $textColor;
+            margin-bottom: 8px;
+        }
+
+        .customPickerCancelBtn {
+            background-color: #ffffff;
+            color: $mainColor;
+        }
+    }
+}

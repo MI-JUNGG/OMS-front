@@ -1,0 +1,25 @@
+.topContanier {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+
+    .schedule {
+        padding: 10px;
+        gap: 10px;
+        margin-left: auto;
+        overflow: auto;
+        padding-right: 30px;
+    }
+
+    .btnHeight {
+        margin-top: auto;
+        position: sticky;
+        bottom: 0;
+        padding-left: 30px;
+    }
+
+    .contanier {
+        display: flex;
+        justify-content: center;
+    }
+}

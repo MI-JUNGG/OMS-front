@@ -1,0 +1,12 @@
+.selectedDate {
+    display: flex;
+    align-items: center;
+    padding-bottom: 5px;
+    .textAll {
+        width: 130px;
+    }
+    span {
+        font-size: 22px;
+        font-weight: 300;
+    }
+}

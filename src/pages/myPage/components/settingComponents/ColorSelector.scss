@@ -1,0 +1,99 @@
+$colorSelector: #58595b;
+$mainColor: #547aff;
+$--temporarybackgroundColor: "";
+
+.colorSelectorContainer {
+    display: flex;
+    justify-content: space-between;
+
+    .selectZone {
+        flex-direction: column;
+        height: 337px;
+        margin-top: 72px;
+
+        .mainColorSelect {
+            margin-bottom: 72px;
+
+            .mainColorList {
+                display: flex;
+
+                div {
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .bgColorSelect {
+            .bgColorList {
+                display: flex;
+                div {
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    .colorPreview {
+        width: 490px;
+        height: 337px;
+        margin-top: 35px;
+        background-color: var(--temporarybackgroundColor);
+
+        // border: 1px solid #abaeb5;
+
+        .previewTop {
+            background-color: var(--temporaryMainColor);
+            height: 35px;
+            display: flex;
+            justify-content: left;
+            align-items: center;
+
+            img {
+                width: 54px;
+                height: 20px;
+                margin-left: 10px;
+            }
+        }
+
+        .previewInsideContainer {
+            background-color: var(--temporarybackgroundColor);
+            display: flex;
+            justify-content: center;
+            height: 302px;
+
+            .previewInside {
+                width: 413px;
+
+                border-radius: 30px;
+                flex-direction: column;
+                text-align: center;
+                background-color: #ffffff;
+                margin: 27px 0;
+
+                button {
+                    width: 124px;
+                    height: 32px;
+                    border-radius: 50px;
+                    background-color: var(--temporaryMainColor);
+                    color: #ffffff;
+                    font-size: 18px;
+                    border: none;
+                    margin-top: 50px;
+                }
+
+                span {
+                    color: var(--temporaryMainColor);
+                    font-size: 18px;
+                    display: block;
+                    margin: 35px auto;
+                }
+
+                .previewLogo {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
+        }
+    }
+}

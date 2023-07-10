@@ -1,0 +1,33 @@
+.navWrapper {
+    height: 96px;
+    padding: 30px 50px;
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #547aff;
+    position: relative;
+
+    .logo {
+        white-space: pre-line;
+
+        img {
+            width: 118px;
+            height: 49px;
+        }
+    }
+
+    .login {
+        width: 120px;
+        text-align: center;
+        .loginText {
+            cursor: pointer;
+            color: white;
+        }
+
+        .signUp {
+            cursor: pointer;
+            color: white;
+        }
+    }
+}
