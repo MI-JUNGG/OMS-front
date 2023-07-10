@@ -22,7 +22,7 @@ import Nav from "./pages/nav/Nav";
 import Week from "./pages/weekly/Week";
 import MyPage from "./pages/myPage/MyPage";
 import KakoCallback from "./pages/sign/KakoCallback";
-import NaverCallback from "./pages/sign/naverCallback";
+import NaverCallback from "./pages/sign/NaverCallback";
 import Main from "./pages/Main";
 
 function Router() {

@@ -9,7 +9,7 @@ import axios from "axios";
 import { useLocation } from "react-router";
 import { email, password } from "/src/modules/module/login";
 import { useEffect } from "react";
-import NaverCallback from "./naverCallback";
+import NaverCallback from "./NaverCallback";
 
 function SignIn() {
     const dispatch = useDispatch();
