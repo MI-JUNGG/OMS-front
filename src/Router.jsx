@@ -20,7 +20,7 @@ import {
 import Daily from "./pages/daily/Daily";
 import Nav from "./pages/nav/Nav";
 import Week from "./pages/weekly/Week";
-import MyPage from "./pages/myPage/myPage";
+import MyPage from "./pages/myPage/MyPage";
 import KakoCallback from "./pages/sign/kakoCallback";
 import NaverCallback from "./pages/sign/naverCallback";
 import Main from "./pages/Main";
