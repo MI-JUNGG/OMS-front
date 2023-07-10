@@ -1,18 +1,18 @@
 import { useSelector, useDispatch } from "react-redux";
 import "./Nav.scss";
-import MonthPicker from "./components/MonthPicker";
-import ViewSwitcher from "./components/ViewSwitcher";
-import YearPicker from "./components/YearPicker";
-import Sign from "../sign/Sign";
-import LoginModalBackground from "../sign/LoginModalBackground";
-import { loginModal } from "../../modules/module/loginModal";
-import { sign } from "../../modules/module/sign";
+import MonthPicker from "./components/MonthPicker.jsx";
+import ViewSwitcher from "./components/ViewSwitcher.jsx";
+import YearPicker from "./components/YearPicker.jsx";
+import Sign from "../sign/Sign.jsx";
+import LoginModalBackground from "../sign/LoginModalBackground.jsx";
+import { loginModal } from "../../modules/module/loginModal.js";
+import { sign } from "../../modules/module/sign.js";
 import {
     nickName,
     eMail,
     password,
     confirmPassword,
-} from "../../modules/module/user";
+} from "../../modules/module/user.js";
 import { useNavigate, useLocation } from "react-router";
 import { getData } from "../myPage/getData";
 import { useState, useEffect } from "react";

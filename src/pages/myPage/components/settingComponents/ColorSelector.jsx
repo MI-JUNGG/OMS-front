@@ -1,11 +1,11 @@
 import "./ColorSelector.scss";
-import SettingCalndaer_1 from "../../../../assets/images/setting/SettingCalendar_1";
-import SettingCalndaer_2 from "../../../../assets/images/setting/SettingCalendar_2";
+import SettingCalndaer_1 from "../../../../assets/images/setting/SettingCalendar_1.jsx";
+import SettingCalndaer_2 from "../../../../assets/images/setting/SettingCalendar_2.jsx";
 import { useDispatch, useSelector } from "react-redux";
 import {
     temporaryBackgroundColor,
     temporaryMainColor,
-} from "../../../../modules/module/temporaryColorSetting";
+} from "../../../../modules/module/temporaryColorSetting.js";
 
 function ColorSelector(props) {
     const existingSettingValue = props.existingSettingValue;

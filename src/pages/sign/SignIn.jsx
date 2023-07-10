@@ -1,15 +1,15 @@
 import { useDispatch, useSelector } from "react-redux";
-import { sign } from "../../modules/module/sign";
+import { sign } from "../../modules/module/sign.js";
 import "./SignIn.scss";
-import { KAKAO_AUTH_URL } from "./kakao";
-import { NAVER_AUTH_URL } from "./LoginNaver";
+import { KAKAO_AUTH_URL } from "./kakao.js";
+import { NAVER_AUTH_URL } from "./LoginNaver.jsx";
 // import NaverLogin from "./NaverLogin";
-import { LoginNaver } from "./LoginNaver";
+import { LoginNaver } from "./LoginNaver.jsx";
 import axios from "axios";
 import { useLocation } from "react-router";
-import { email, password } from "/src/modules/module/login";
+import { email, password } from "/src/modules/module/login.js";
 import { useEffect } from "react";
-import NaverCallback from "./NaverCallback";
+import NaverCallback from "./NaverCallback.jsx";
 
 function SignIn() {
     const dispatch = useDispatch();

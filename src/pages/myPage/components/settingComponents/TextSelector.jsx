@@ -1,15 +1,15 @@
 import { useEffect, useState } from "react";
 import "./TextSelector.scss";
 import { useDispatch, useSelector } from "react-redux";
-import { isModal, isCustomPicker } from "../../../../modules/module/setting";
+import { isModal, isCustomPicker } from "../../../../modules/module/setting.js";
 
 import {
     temporaryBlockBGColor,
     temporaryBlockMainColor,
     temporaryTextColor,
     temporaryTextStyle,
-} from "../../../../modules/module/temporaryColorSetting";
-import ColorList from "./ColorList";
+} from "../../../../modules/module/temporaryColorSetting.js";
+import ColorList from "./ColorList.jsx";
 
 function TextSelector(props) {
     const existingSettingValue = props.existingSettingValue;

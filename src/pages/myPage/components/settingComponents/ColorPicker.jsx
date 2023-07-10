@@ -7,16 +7,16 @@ import {
     handleaxiosBlockColor,
     isModal,
     isCustomPicker,
-} from "../../../../modules/module/setting";
+} from "../../../../modules/module/setting.js";
 import { ChromePicker } from "react-color";
 import {
     setCustomMainColor,
     setCustomBackgroundColor,
-} from "../../../../modules/module/colorPicker";
+} from "../../../../modules/module/colorPicker.js";
 import {
     temporaryBlockColorTheme,
     temporaryBlockColorThemeTitle,
-} from "../../../../modules/module/temporaryColorSetting";
+} from "../../../../modules/module/temporaryColorSetting.js";
 
 function ColorPicker(props) {
     const colorList = useSelector((state) => state.colorPickerReducer.color);

@@ -1,6 +1,6 @@
 import { useLocation } from "react-router";
 import { useEffect } from "react";
-import { LoginNaver } from "./LoginNaver";
+import { LoginNaver } from "./LoginNaver.jsx";
 const { naver } = window;
 
 export default function NaverLogin() {

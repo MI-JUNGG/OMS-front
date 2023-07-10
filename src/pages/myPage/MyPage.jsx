@@ -1,10 +1,10 @@
-import UserInfo from "./components/UserInfo";
-import Setting from "./components/Setting";
+import UserInfo from "./components/UserInfo.jsx";
+import Setting from "./components/Setting.jsx";
 import "./MyPage.scss";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { getData, API, token } from "./getData";
+import { getData, API, token } from "./getData.js";
 import axios from "axios";
 
 function MyPage() {

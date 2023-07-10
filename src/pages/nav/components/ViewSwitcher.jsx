@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { view } from "../../../modules/module/viewSelector";
+import { view } from "../../../modules/module/viewSelector.js";
 import { Link, useLocation } from "react-router-dom";
 import "./ViewSwitcher.scss";
 

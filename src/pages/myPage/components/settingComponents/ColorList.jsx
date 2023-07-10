@@ -1,16 +1,16 @@
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import "./ColorList.scss";
-import ModalPlus from "/src/assets/images/modal/ModalPlus";
-import { isModal, isCustomPicker } from "../../../../modules/module/setting";
-import ColorPicker from "./ColorPicker";
-import ColorPickerBackground from "./ColorPickerBackground";
+import ModalPlus from "/src/assets/images/modal/ModalPlus.jsx";
+import { isModal, isCustomPicker } from "../../../../modules/module/setting.js";
+import ColorPicker from "./ColorPicker.jsx";
+import ColorPickerBackground from "./ColorPickerBackground.jsx";
 import {
     temporaryBlockBGColor,
     temporaryBlockMainColor,
     temporaryTextColor,
     temporaryTextStyle,
-} from "../../../../modules/module/temporaryColorSetting";
+} from "../../../../modules/module/temporaryColorSetting.js";
 
 function ColorList() {
     const dispatch = useDispatch();
