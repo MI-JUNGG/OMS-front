@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 import { limitControl } from "../../../../modules/module/modal";
-import Year from "./limit/year";
+import Year from "./limit/Year";
 import Month from "./limit/Month";
 import Day from "./limit/Day";
 import "../CardCompo/AlldayTime.scss";
