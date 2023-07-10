@@ -38,7 +38,7 @@ function KakoCallback() {
                 const accessToken = res.data.access_token;
                 localStorage.setItem("token", accessToken);
                 alert("성공적으로 로그인 했습니다");
-                //백엔드에 넘겨주기
+
                 axios
                     .post(
                         "http://10.99.230.245:3001/auth/kakao",
