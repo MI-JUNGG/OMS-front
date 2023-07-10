@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { minusY, PlusY } from "../../../../modules/module/date";
+import { minusY, PlusY } from "../../../../modules/module/date.js";
 import "./YearSelector.scss";
 
 function YearSelector() {

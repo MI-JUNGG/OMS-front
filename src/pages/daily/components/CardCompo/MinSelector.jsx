@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addMin, minusMin } from "../../../../modules/module/date";
-import { eaddMin, eminusMin } from "../../../../modules/module/endDate";
+import { addMin, minusMin } from "../../../../modules/module/date.js";
+import { eaddMin, eminusMin } from "../../../../modules/module/endDate.js";
 import "./Minselector.scss";
 
 function MinSelector() {

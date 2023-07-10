@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { minusY, PlusY } from "../../../../../modules/module/repeatStart";
+import { minusY, PlusY } from "../../../../../modules/module/repeatStart.js";
 import "../../CardCompo/YearSelector.scss";
 
 function Year() {

@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { PlusD, minusD } from "../../../../modules/module/date";
+import { PlusD, minusD } from "../../../../modules/module/date.js";
 import "./DaySelector.scss";
 
 function DaySelector() {

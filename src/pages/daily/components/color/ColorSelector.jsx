@@ -1,7 +1,7 @@
 import { useDispatch } from "react-redux";
 import "./colorCss/ColorSelector.scss";
-import ModalPlus from "../../../../assets/images/modal/ModalPlus";
-import { showColorPicker } from "../../../../modules/module/modal";
+import ModalPlus from "../../../../assets/images/modal/ModalPlus.jsx";
+import { showColorPicker } from "../../../../modules/module/modal.js";
 
 function ColorSelector() {
     const dispatch = useDispatch();

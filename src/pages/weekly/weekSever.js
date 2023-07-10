@@ -1,5 +1,5 @@
 import axios from "axios";
-import { API, token } from "../daily/server";
+import { API, token } from "../daily/server.js";
 
 export const callData = (dateState, startDate, endDate) => {
     console.log(`${API}/week`);

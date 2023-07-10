@@ -1,9 +1,9 @@
 import { useLocation } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { deleteCard } from "../../modules/module/modal";
-import Trash from "./components/Trash";
-import Setting from "./components/Setting";
-import Edit from "./components/Edit";
+import { deleteCard } from "../../modules/module/modal.js";
+import Trash from "./components/Trash.jsx";
+import Setting from "./components/Setting.jsx";
+import Edit from "./components/Edit.jsx";
 
 function BtnDropdown() {
     const location = useLocation();

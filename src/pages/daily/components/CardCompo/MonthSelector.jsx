@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import "./MonthSelector.scss";
 import { useDispatch, useSelector } from "react-redux";
-import { minusM, PlusM } from "../../../../modules/module/date";
+import { minusM, PlusM } from "../../../../modules/module/date.js";
 
 function MonthSelector({ monHandler }) {
     const dispatch = useDispatch();

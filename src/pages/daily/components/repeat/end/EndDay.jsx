@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { ePlusD, eminusD } from "../../../../../modules/module/repeatEnd";
+import { ePlusD, eminusD } from "../../../../../modules/module/repeatEnd.js";
 
 import "../../CardCompo/DaySelector.scss";
 

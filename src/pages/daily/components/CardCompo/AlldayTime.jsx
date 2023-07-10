@@ -1,11 +1,11 @@
-import MonthSelector from "./MonthSelector";
-import DaySelector from "./DaySelector";
+import MonthSelector from "./MonthSelector.jsx";
+import DaySelector from "./DaySelector.jsx";
 import "./AlldayTime.scss";
-import YearSelector from "./YearSelector";
-import TimeSelector from "./TimeSelector";
-import MinSelector from "./MinSelector";
+import YearSelector from "./YearSelector.jsx";
+import TimeSelector from "./TimeSelector.jsx";
+import MinSelector from "./MinSelector.jsx";
 import { useSelector, useDispatch } from "react-redux";
-import { dateControl } from "../../../../modules/module/modal";
+import { dateControl } from "../../../../modules/module/modal.js";
 
 function AlldayTime() {
     const openModal = useSelector((state) => state.modalReducer.dateControl);

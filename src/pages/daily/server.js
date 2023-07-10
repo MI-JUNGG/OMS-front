@@ -1,5 +1,5 @@
 import axios from "axios";
-import card from "../../modules/module/card";
+import card from "../../modules/module/card.js";
 
 const { VITE_API_URL } = import.meta.env;
 

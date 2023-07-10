@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addTime, minusTime } from "../../../../modules/module/date";
-import { eaddTime, eminusTime } from "../../../../modules/module/endDate";
+import { addTime, minusTime } from "../../../../modules/module/date.js";
+import { eaddTime, eminusTime } from "../../../../modules/module/endDate.js";
 import "./TimeSelector.scss";
 
 function TimeSelector() {

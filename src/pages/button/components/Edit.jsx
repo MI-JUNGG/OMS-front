@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { cardmodal } from "../../../modules/module/modal";
+import { cardmodal } from "../../../modules/module/modal.js";
 
 function Edit() {
     const dispatch = useDispatch();

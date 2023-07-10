@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { minusM, PlusM } from "../../../../../modules/module/repeatStart";
+import { minusM, PlusM } from "../../../../../modules/module/repeatStart.js";
 import "../../CardCompo/MonthSelector.scss";
 
 function Month({ monHandler }) {

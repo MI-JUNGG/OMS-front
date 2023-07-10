@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { dateType, typeControl } from "../../../../modules/module/modal";
+import { dateType, typeControl } from "../../../../modules/module/modal.js";
 import "./DateType.scss";
 
 function DateType() {

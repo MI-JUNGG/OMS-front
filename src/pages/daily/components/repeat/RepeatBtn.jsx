@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
-import { limitControl } from "../../../../modules/module/modal";
-import DateDropDown from "./DateDropDown";
+import { limitControl } from "../../../../modules/module/modal.js";
+import DateDropDown from "./DateDropDown.jsx";
 import "./RepeatBtn.scss";
 
 function RepeatBtn() {

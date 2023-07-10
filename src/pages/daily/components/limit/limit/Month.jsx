@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { lPlusM, lminusM } from "../../../../../modules/module/Limit";
+import { lPlusM, lminusM } from "../../../../../modules/module/Limit.js";
 import "../../CardCompo/MonthSelector.scss";
 
 function Month() {

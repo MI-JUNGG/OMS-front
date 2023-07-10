@@ -1,8 +1,8 @@
-import EndYear from "./end/EndYear";
-import EndMonth from "./end/EndMonth";
-import EndDay from "./end/EndDay";
+import EndYear from "./end/EndYear.jsx";
+import EndMonth from "./end/EndMonth.jsx";
+import EndDay from "./end/EndDay.jsx";
 import { useDispatch } from "react-redux";
-import { repeatEndControl } from "../../../../modules/module/modal";
+import { repeatEndControl } from "../../../../modules/module/modal.js";
 import "../CardCompo/AlldayTime.scss";
 
 function RepeatEnd() {

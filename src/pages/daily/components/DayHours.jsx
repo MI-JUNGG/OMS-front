@@ -1,4 +1,4 @@
-import { hours } from "../time";
+import { hours } from "../time.js";
 import "./DayHour.scss";
 
 function DayHours() {

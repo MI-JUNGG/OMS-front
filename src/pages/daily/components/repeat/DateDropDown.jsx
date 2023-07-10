@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { valueSelector } from "../../../../modules/module/Limit";
+import { valueSelector } from "../../../../modules/module/Limit.js";
 import { useDispatch } from "react-redux";
-import { typeReducer } from "../../../../modules/module/repeatType";
+import { typeReducer } from "../../../../modules/module/repeatType.js";
 import "./DateDropDown.scss";
 
 function DateDropDown({ showModal }) {
