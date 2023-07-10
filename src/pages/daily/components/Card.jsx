@@ -5,7 +5,7 @@ import { DeleteCardHandler, FixCardHandler } from "../../daily/server";
 import { removeCard } from "../../../modules/module/card";
 import AlldayTime from "./CardCompo/AlldayTime";
 import ModalLink from "../../../assets/images/modal/ModalLink";
-import ModalNote from "../../../assets/images/modal/modalNote";
+import ModalNote from "../../../assets/images/modal/ModalNote";
 import ModalX from "../../../assets/images/modal/ModalX";
 import ModalCheck from "../../../assets/images/modal/ModalCheck";
 import EndDate from "../components/CardCompo/endDate/EndDate";
