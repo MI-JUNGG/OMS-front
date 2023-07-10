@@ -1,29 +1,33 @@
 import { useState, useEffect, useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { cardmodal } from "../../../modules/module/modal";
-import { DeleteCardHandler, FixCardHandler } from "../../daily/server";
-import { removeCard } from "../../../modules/module/card";
-import AlldayTime from "./CardCompo/AlldayTime";
-import ModalLink from "../../../assets/images/modal/ModalLink";
-import ModalNote from "../../../assets/images/modal/ModalNote";
-import ModalX from "../../../assets/images/modal/ModalX";
-import ModalCheck from "../../../assets/images/modal/ModalCheck";
-import EndDate from "../components/CardCompo/endDate/EndDate";
-import RepeatEnd from "./repeat/RepeatEnd";
-import RepeatStart from "./repeat/RepeatStart";
-import ColorSelector from "./color/ColorSelector";
-import All from "./All";
-import Repeat from "./repeat/Repeat";
-import { cardTypeReducer } from "../../../modules/module/modal";
-import { counterHandler } from "../server";
-import LimitDateSelect from "./limit/LimitDateSelect";
-import Trash from "../../../assets/images/floating_action/Trash";
+import { cardmodal } from "../../../modules/module/modal.js";
+import { DeleteCardHandler, FixCardHandler } from "../../daily/server.js";
+import { removeCard } from "../../../modules/module/card.js";
+import AlldayTime from "./CardCompo/AlldayTime.jsx";
+import ModalLink from "../../../assets/images/modal/ModalLink.jsx";
+import ModalNote from "../../../assets/images/modal/ModalNote.jsx";
+import ModalX from "../../../assets/images/modal/ModalX.jsx";
+import ModalCheck from "../../../assets/images/modal/ModalCheck.jsx";
+import EndDate from "../components/CardCompo/endDate/EndDate.jsx";
+import RepeatEnd from "./repeat/RepeatEnd.jsx";
+import RepeatStart from "./repeat/RepeatStart.jsx";
+import ColorSelector from "./color/ColorSelector.jsx";
+import All from "./All.jsx";
+import Repeat from "./repeat/Repeat.jsx";
+import { cardTypeReducer } from "../../../modules/module/modal.js";
+import { counterHandler } from "../server.js";
+import LimitDateSelect from "./limit/LimitDateSelect.jsx";
+import Trash from "../../../assets/images/floating_action/Trash.jsx";
 import dayjs from "dayjs";
-import { addDate, addMonth, addDay } from "../../../modules/module/date";
-import { eaddDate, eaddMonth, eaddDay } from "../../../modules/module/endDate";
-import { initialReducer } from "../../../modules/module/Limit";
-import { newDate } from "../../../modules/module/repeatStart";
-import ColorList from "../../myPage/components/settingComponents/ColorList";
+import { addDate, addMonth, addDay } from "../../../modules/module/date.js";
+import {
+    eaddDate,
+    eaddMonth,
+    eaddDay,
+} from "../../../modules/module/endDate.js";
+import { initialReducer } from "../../../modules/module/Limit.js";
+import { newDate } from "../../../modules/module/repeatStart.js";
+import ColorList from "../../myPage/components/settingComponents/ColorList.jsx";
 import "./Card.scss";
 
 function Card() {

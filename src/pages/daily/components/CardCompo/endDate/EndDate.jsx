@@ -1,11 +1,11 @@
-import DaySelector from "./DaySelector";
-import Mselector from "./Mselector";
-import YearSelector from "./YearSelector";
+import DaySelector from "./DaySelector.jsx";
+import Mselector from "./Mselector.jsx";
+import YearSelector from "./YearSelector.jsx";
 import { useSelector, useDispatch } from "react-redux";
-import { endDateControl } from "../../../../../modules/module/modal";
+import { endDateControl } from "../../../../../modules/module/modal.js";
 import "../AlldayTime.scss";
-import TimeSelector from "../TimeSelector";
-import MinSelector from "../MinSelector";
+import TimeSelector from "../TimeSelector.jsx";
+import MinSelector from "../MinSelector.jsx";
 
 function AlldayTime() {
     const dispatch = useDispatch();

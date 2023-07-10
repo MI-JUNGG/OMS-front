@@ -1,8 +1,8 @@
 import React from "react";
-import AllDaySelectedTime from "./CardCompo/AllDaySelectedTime";
+import AllDaySelectedTime from "./CardCompo/AllDaySelectedTime.jsx";
 import { useDispatch } from "react-redux";
 import { dateControl } from "../../../modules/module/modal";
-import DateType from "./CardCompo/DateType";
+import DateType from "./CardCompo/DateType.jsx";
 import "./All.scss";
 
 function All() {

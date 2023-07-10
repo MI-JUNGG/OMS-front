@@ -4,8 +4,8 @@ import { useDispatch, useSelector } from "react-redux";
 import {
     repeatControl,
     repeatEndControl,
-} from "../../../../modules/module/modal";
-import DateRight from "../../../../assets/images/date_picker/DateRight";
+} from "../../../../modules/module/modal.js";
+import DateRight from "../../../../assets/images/date_picker/DateRight.jsx";
 import "./AllDaySelectedTime.scss";
 
 function AllDaySelectedTime() {

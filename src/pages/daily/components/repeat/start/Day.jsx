@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { PlusD, minusD } from "../../../../../modules/module/repeatStart";
+import { PlusD, minusD } from "../../../../../modules/module/repeatStart.js";
 import "../../CardCompo/DaySelector.scss";
 
 function Day() {

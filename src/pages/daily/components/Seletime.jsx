@@ -1,20 +1,20 @@
 import React, { useState } from "react";
 import dayjs from "dayjs";
 import { useLocation, useNavigate } from "react-router-dom";
-import DayHours from "./DayHours";
-import { hours } from "../time";
-import DateLeft from "../../../assets/images/date_picker/DateLeft";
-import DateRight from "../../../assets/images/date_picker/DateRight";
-import { cardTypeReducer } from "../../../modules/module/modal";
-import { cardmodal } from "../../../modules/module/modal";
+import DayHours from "./DayHours.jsx";
+import { hours } from "../time.js";
+import DateLeft from "../../../assets/images/date_picker/DateLeft.jsx";
+import DateRight from "../../../assets/images/date_picker/DateRight.jsx";
+import { cardTypeReducer } from "../../../modules/module/modal.js";
+import { cardmodal } from "../../../modules/module/modal.js";
 import "./Selectime.scss";
 import { useDispatch, useSelector } from "react-redux";
-import { colors } from "./color/ColorPalette";
-import { update } from "../../../modules/module/date";
-import { endUpdate } from "../../../modules/module/endDate";
-import { addCard } from "../../../modules/module/card";
-import { callUserCard } from "../server";
-import { idHandler } from "../../../modules/module/modal";
+import { colors } from "./color/ColorPalette.jsx";
+import { update } from "../../../modules/module/date.js";
+import { endUpdate } from "../../../modules/module/endDate.js";
+import { addCard } from "../../../modules/module/card.js";
+import { callUserCard } from "../server.js";
+import { idHandler } from "../../../modules/module/modal.js";
 
 function Selectime() {
     const dispatch = useDispatch();

@@ -5,11 +5,11 @@ import {
     dateControl,
     endDateControl,
     repeatControl,
-} from "../../../../modules/module/modal";
+} from "../../../../modules/module/modal.js";
 
-import DateRight from "../../../../assets/images/date_picker/DateRight";
-import DateType from "../CardCompo/DateType";
-import RepeatBtn from "./RepeatBtn";
+import DateRight from "../../../../assets/images/date_picker/DateRight.jsx";
+import DateType from "../CardCompo/DateType.jsx";
+import RepeatBtn from "./RepeatBtn.jsx";
 import "../All.scss";
 
 function Repeat() {

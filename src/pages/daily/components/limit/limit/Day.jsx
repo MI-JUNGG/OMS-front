@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { lPlusD, lminusD } from "../../../../../modules/module/Limit";
+import { lPlusD, lminusD } from "../../../../../modules/module/Limit.js";
 import "../../CardCompo/AlldayTime.scss";
 
 function Day() {

@@ -1,29 +1,29 @@
 import { useState, useEffect } from "react";
-import Card from "../daily/components/Card";
+import Card from "../daily/components/Card.jsx";
 import { useNavigate } from "react-router-dom";
-import { hours, days } from "../daily/time";
-import { callData } from "./weekSever";
-import { addCard } from "../../modules/module/card";
-import Button from "../button/Button";
-import Hour from "./Hour";
-import DateLeft from "../../assets/images/date_picker/DateLeft";
-import DateRight from "../../assets/images/date_picker/DateRight";
+import { hours, days } from "../daily/time.js";
+import { callData } from "./weekSever.js";
+import { addCard } from "../../modules/module/card.js";
+import Button from "../button/Button.jsx";
+import Hour from "./Hour.jsx";
+import DateLeft from "../../assets/images/date_picker/DateLeft.jsx";
+import DateRight from "../../assets/images/date_picker/DateRight.jsx";
 import dayjs from "dayjs";
-import { cardmodal } from "../../modules/module/modal";
+import { cardmodal } from "../../modules/module/modal.js";
 import { useDispatch, useSelector } from "react-redux";
-import LoginModalBackground from "../sign/LoginModalBackground";
-import { addDate, addMonth, addDay } from "../../modules/module/date";
-import { eaddDate, eaddMonth, eaddDay } from "../../modules/module/endDate";
-import { newDate } from "../../modules/module/repeatStart";
+import LoginModalBackground from "../sign/LoginModalBackground.jsx";
+import { addDate, addMonth, addDay } from "../../modules/module/date.js";
+import { eaddDate, eaddMonth, eaddDay } from "../../modules/module/endDate.js";
+import { newDate } from "../../modules/module/repeatStart.js";
 import {
     laddDate,
     laddMonth,
     laddDay,
     initialReducer,
-} from "../../modules/module/Limit";
+} from "../../modules/module/Limit.js";
 import "./weekly.scss";
-import { formatDate } from "react-calendar/dist/cjs/shared/dateFormatter";
-import { idHandler } from "../../modules/module/modal";
+import { formatDate } from "react-calendar/dist/cjs/shared/dateFormatter.js";
+import { idHandler } from "../../modules/module/modal.js";
 
 function Weekly() {
     const navigate = useNavigate();

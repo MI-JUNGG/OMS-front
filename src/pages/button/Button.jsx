@@ -1,6 +1,6 @@
 import { useState } from "react";
-import Plus from "./components/Plus";
-import BtnDropdown from "./BtnDropdown";
+import Plus from "./components/Plus.jsx";
+import BtnDropdown from "./BtnDropdown.jsx";
 import "./Button.scss";
 
 function Button() {
