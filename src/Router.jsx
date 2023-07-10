@@ -17,7 +17,7 @@ import {
     temporaryBlockColorTheme,
     temporaryBlockColorThemeTitle,
 } from "../src/modules/module/temporaryColorSetting";
-import Main from "./pages/main";
+import Main from "./pages/Main";
 import Daily from "./pages/daily/Daily";
 import Nav from "./pages/nav/Nav";
 import Week from "./pages/weekly/Week";
