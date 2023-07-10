@@ -1,15 +1,18 @@
 import axios from "axios";
+import card from "../../modules/module/card";
 
-import { addCard } from "../../modules/module/card";
+const { VITE_API_URL } = import.meta.env;
 
-export const API = "http://10.99.230.245:3001";
+export const API = VITE_API_URL;
+// export const token = localStorage.getItem("token");
 export const token =
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJpYXQiOjE2ODczMjA5MzF9.IPsILZ50ZUhLMwCwkzHs3dM75GnaBrvNtjV7U0Ord08";
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJpYXQiOjE2ODgzOTM1ODV9._My69GAEXFUmA7BZ2iib1WsvhY2e3Rzbof6QKKZg4_s";
+
 export const callUserCard = (handleOutClick, day) => {
+    console.log(1);
     axios
-        .get("http://10.99.230.245:3001/day", {
+        .get(`${API}/day`, {
             params: {
-                //수정
                 startDate: day,
             },
             headers: {
@@ -17,7 +20,6 @@ export const callUserCard = (handleOutClick, day) => {
             },
         })
         .then((response) => {
-            console.log(response.data);
             handleOutClick([...response.data]);
         })
         .catch((error) => {
@@ -28,13 +30,23 @@ export const callUserCard = (handleOutClick, day) => {
 export const counterHandler = (
     title,
     contents,
-    repeatE,
+    startDate,
     endDate,
     color,
     url,
-    repeatCardType,
+    repeatId,
+    limitDate,
 ) => {
-    console.log(repeatCardType);
+    // console.log(
+    //     "title: " + title,
+    //     "contents: " + contents,
+    //     "startDate :" + startDate,
+    //     "endDate :" + endDate,
+    //     "color : " + color,
+    //     "url : " + url,
+    //     "repeatCardType : " + repeatId,
+    //     "limitDate : " + limitDate,
+    // );
 
     const config = {
         headers: {
@@ -44,16 +56,16 @@ export const counterHandler = (
 
     axios
         .post(
-            "http://10.99.230.245:3001/card",
+            `${API}/card`,
             {
                 title: title,
                 memo: contents,
-                startDate: repeatE.toISOString(),
-                repeatId: repeatCardType,
-                endDate: repeatE.toISOString(),
+                startDate: startDate,
+                repeatId: repeatId,
+                endDate: endDate,
                 color: "#1234",
                 link: url,
-                deadline: repeatE.toISOString(),
+                deadline: limitDate,
             },
             config,
         )
@@ -63,33 +75,44 @@ export const counterHandler = (
         .catch((error) => {
             console.log("error", error);
         });
-
-    console.log(endDate);
 };
 
 export const FixCardHandler = (
+    id,
     title,
     contents,
-    repeatE,
-    repeatId,
+    startDate,
     endDate,
     color,
     url,
+    repeatId,
+    limitDate,
 ) => {
-    console.log(title, contents, repeatE, repeatId, endDate, color, url);
+    console.log(
+        "cardId:" + id,
+        "title: " + title,
+        "contents: " + contents,
+        "startDate :" + startDate,
+        "endDate :" + endDate,
+        "color : " + color,
+        "url : " + url,
+        "repeatCardType : " + repeatId,
+        limitDate,
+    );
+    console.log("fix", endDate);
     axios
         .put(
-            `http://${API}:3001/card`,
+            `${API}/card`,
             {
-                cardId: 26,
+                cardId: id,
                 title: title,
                 memo: contents,
-                startDate: repeatE.toISOString(),
-                repeatId: 2,
-                endDate: repeatE.toISOString(),
-                color: color,
+                startDate: startDate,
+                repeatId: repeatId,
+                endDate: endDate,
+                color: "#1234",
                 link: url,
-                deadline: repeatE.toISOString(),
+                deadline: limitDate,
             },
             {
                 headers: {
@@ -105,14 +128,15 @@ export const FixCardHandler = (
         });
 };
 
-export const DeleteCardHandler = (cardId) => {
+export const DeleteCardHandler = (id) => {
+    console.log("id:" + id);
     axios
-        .delete(`http://${API}:3001/card`, {
+        .delete(`${API}/card`, {
             headers: {
                 Authorization: token,
             },
             data: {
-                cardId: 27,
+                cardId: id,
             },
         })
         .then(function (response) {
@@ -124,4 +148,5 @@ export const DeleteCardHandler = (cardId) => {
         .then(function (data) {
             console.log(data);
         });
+    alert("삭제 완료");
 };

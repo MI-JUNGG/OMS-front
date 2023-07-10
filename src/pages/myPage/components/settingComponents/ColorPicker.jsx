@@ -13,9 +13,13 @@ import {
     setCustomMainColor,
     setCustomBackgroundColor,
 } from "../../../../modules/module/colorPicker";
+import {
+    temporaryBlockColorTheme,
+    temporaryBlockColorThemeTitle,
+} from "../../../../modules/module/temporaryColorSetting";
 
 function ColorPicker(props) {
-    const colorList = props.colorList;
+    const colorList = useSelector((state) => state.colorPickerReducer.color);
     const blockColorTheme = props.blockColorTheme;
     const blockColorThemeTitle = props.blockColorThemeTitle;
     const dispatch = useDispatch();
@@ -24,6 +28,7 @@ function ColorPicker(props) {
         key: blockColorTheme,
         title: blockColorThemeTitle,
     });
+
     const [customId, setCustomId] = useState("");
 
     const changeCustomColor = () => {
@@ -42,6 +47,8 @@ function ColorPicker(props) {
             }),
         );
         dispatch(isCustomPicker(false));
+        dispatch(handleBlockColorTheme(colorSub.key));
+        dispatch(isModal(0));
     };
 
     const pickColorList = (key, title) => {
@@ -53,6 +60,8 @@ function ColorPicker(props) {
         dispatch(handleBlockColorThemeTitle(colorSub.title));
         dispatch(isModal(false));
         dispatch(handleaxiosBlockColor(colorSub.key + 1));
+        dispatch(temporaryBlockColorTheme(colorSub.key));
+        dispatch(temporaryBlockColorThemeTitle(colorSub.title));
     };
     const isOnCustom = useSelector(
         (state) => state.settingReducer.isCustomPicker,
@@ -60,7 +69,6 @@ function ColorPicker(props) {
     const axiosBlock = useSelector(
         (state) => state.settingReducer.axiosBlockColor,
     );
-    console.log("A", axiosBlock);
 
     const [color, setColor] = useState("#ffffff"); // 초기 색상값 설정
     const handleChange = (selectedColor) => {
@@ -69,6 +77,8 @@ function ColorPicker(props) {
     const onCustom = () => {
         dispatch(isCustomPicker(true));
     };
+
+    useEffect(() => {}, [colorList]);
 
     return (
         <>

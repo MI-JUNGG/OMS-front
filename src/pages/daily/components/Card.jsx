@@ -17,46 +17,146 @@ import Repeat from "./repeat/Repeat";
 import { cardTypeReducer } from "../../../modules/module/modal";
 import { counterHandler } from "../server";
 import LimitDateSelect from "./limit/LimitDateSelect";
-import "./Card.scss";
 import Trash from "../../../assets/images/floating_action/Trash";
+import dayjs from "dayjs";
+import { addDate, addMonth, addDay } from "../../../modules/module/date";
+import { eaddDate, eaddMonth, eaddDay } from "../../../modules/module/endDate";
+import { initialReducer } from "../../../modules/module/Limit";
+import { newDate } from "../../../modules/module/repeatStart";
+import ColorList from "../../myPage/components/settingComponents/ColorList";
+import "./Card.scss";
 
 function Card() {
-    const dispatch = useDispatch();
+    const [form, setForm] = useState({
+        title: "",
+        contents: "",
+        url: "",
+        color: "",
+    });
+    const id = useSelector((state) => state.modalReducer.cardID);
 
+    const CARD =
+        id.cardData === "week"
+            ? useSelector((state) => state.cardReducer.week)
+            : useSelector((state) => state.cardReducer.day);
+
+    const dispatch = useDispatch();
+    const initialState = () => {
+        const currentURL = window.location.href;
+        const url = new URL(currentURL);
+        const dateString = url.searchParams.get("date");
+        const [year, month, day] = dateString.split("-");
+        const dateAction = addDate(Number(year));
+        const monthAction = addMonth(Number(month));
+        const dayAction = addDay(Number(day));
+
+        const enddateAction = eaddDate(Number(year));
+        const endmonthAction = eaddMonth(Number(month));
+        const enddayAction = eaddDay(Number(day));
+
+        dispatch(enddateAction);
+        dispatch(endmonthAction);
+        dispatch(enddayAction);
+
+        dispatch(dateAction);
+        dispatch(monthAction);
+        dispatch(dayAction);
+
+        dispatch(
+            initialReducer({
+                year: year,
+                month: month,
+                day: day,
+            }),
+        );
+        dispatch(
+            newDate({
+                year: Number(year),
+                month: Number(month),
+                day: Number(day),
+            }),
+        );
+    };
+
+    useEffect(() => {
+        const findCARD = CARD.find((item) => item.cardId === id.cardid);
+        findCARD &&
+            setForm({
+                title: findCARD.title,
+                contents: findCARD.memo,
+                url: findCARD.link,
+                // color: "",
+            });
+    }, [id]);
     const typeId = Number(
         useSelector((state) => state.modalReducer.typeControl),
     );
     /*카드삭제*/
-    const deleteHandler = (cardId) => {
-        DeleteCardHandler(cardId);
+    const deleteHandler = () => {
+        DeleteCardHandler(id.cardid);
         dispatch(removeCard());
         dispatch(cardTypeReducer());
     };
 
     const AllStartYear = useSelector((state) => state.dateReducer.year);
-    const AllStartMonth = useSelector((state) => state.dateReducer.Month);
-    const AllStartDay = useSelector((state) => state.dateReducer.Day);
+    const AllStartMonth = useSelector((state) => state.dateReducer.month);
+    const AllStartDay = useSelector((state) => state.dateReducer.day);
+    const toStringStart = `${AllStartYear}-${AllStartMonth}-${AllStartDay} 00:00:01`;
 
     const AllEndYear = useSelector((state) => state.endDateReducer.year);
     const AllEndMonth = useSelector((state) => state.endDateReducer.month);
     const AllEndDay = useSelector((state) => state.endDateReducer.day);
 
-    const repeatStartYear = useSelector(
-        (state) => state.repeatStartReducer.year,
-    );
-    const repeatStartMonth = useSelector(
-        (state) => state.repeatStartReducer.month,
-    );
-    const repeatStartDay = useSelector((state) => state.repeatStartReducer.day);
-    const repeat = new Date(
-        repeatStartYear + repeatStartMonth + repeatStartDay,
-    );
-    const repeatEndYear = useSelector((state) => state.repeatEndReducer.year);
+    const toStringEnd = `${AllEndYear}-${AllEndMonth}-${AllEndDay} 23:59:59`;
+    const allStart = dayjs(toStringStart).format("YYYY-MM-DD 00:00:00");
 
-    const repeatEndMonth = useSelector((state) => state.repeatEndReducer.month);
-    const repeatEndDay = useSelector((state) => state.repeatEndReducer.day);
-    const repeatE = new Date(repeatEndYear, repeatEndMonth, repeatEndDay);
-    console.log(repeatE);
+    const allEnd = dayjs(toStringEnd).format("YYYY-MM-DD 23:59:59");
+
+    const repeatStartYear = useSelector((state) => state.dateReducer.year);
+    const repeatStartMonth =
+        Number(useSelector((state) => state.dateReducer.month)) - 1;
+    const repeatStartDay = useSelector((state) => state.dateReducer.day);
+    const repeatStartTime = useSelector((state) => state.dateReducer.time);
+    const repeatStartMinute = useSelector((state) => state.dateReducer.minute);
+    const repeat = new Date(
+        repeatStartYear,
+        repeatStartMonth,
+        repeatStartDay,
+        repeatStartTime,
+        repeatStartMinute,
+    );
+
+    const repeatEndYear = Number(
+        useSelector((state) => state.repeatEndReducer.year),
+    );
+    const repeatEndMonth = Number(
+        useSelector((state) => state.repeatEndReducer.month),
+    );
+    const repeatEndDay = Number(
+        useSelector((state) => state.repeatEndReducer.day),
+    );
+    const repeatEndTime = Number(
+        useSelector((state) => state.repeatEndReducer.time),
+    );
+    const repeatEndDayMinute = Number(
+        useSelector((state) => state.repeatEndReducer.minute),
+    );
+
+    const endDate = `${repeatEndYear}-${
+        repeatEndMonth + 1
+    }-${repeatEndDay} ${repeatEndTime}:${repeatEndDayMinute}`;
+    const repeatE = dayjs(endDate).format("YYYY-MM-DD HH:mm:ss");
+
+    const limitY = useSelector((state) => state.limitReducer.year);
+    const limitM = useSelector((state) => state.limitReducer.month);
+    const limitD = useSelector((state) => state.limitReducer.day);
+
+    const limitDate = dayjs()
+        .year(limitY)
+        .month(limitM - 1)
+        .date(limitD)
+        .format("YYYY-MM-DD");
+
     const cardType = useSelector((state) => state.modalReducer.FixCard);
 
     const showLimit = useSelector((state) => state.modalReducer.limit); //
@@ -82,15 +182,24 @@ function Card() {
 
     const outerRef = useRef(null);
 
-    const [form, setForm] = useState({
-        title: "",
-        contents: "",
-        url: "",
-        startDate: repeat,
-        endDate: repeatE,
-        color: "",
-    });
-    const { title, contents, startDate, endDate, color, url } = form;
+    const { title, contents, color, url } = form;
+
+    const limitType = useSelector((state) => state.limitReducer.value);
+
+    const typeNum =
+        limitType === "매일"
+            ? 2
+            : limitType === "매주"
+            ? 3
+            : limitType === "매달"
+            ? 4
+            : limitType === "매년"
+            ? 5
+            : 1;
+
+    useEffect(() => {
+        initialState();
+    }, []);
     useEffect(() => {
         const handleScroll = (event) => {
             const { target } = event;
@@ -128,18 +237,72 @@ function Card() {
     };
     const closeModal =
         !openModal && !endDateModal && !repeatEnd && !repeatStart && !showLimit;
-    console.log(repeatCardType);
+    const Fix = useSelector((state) => state.modalReducer.deleteCard);
+
+    const isALL = useSelector((state) => state.modalReducer.dateType);
+
+    const repeatCard = () => {
+        if (isALL === false) {
+            const startDate = dayjs(allStart);
+            const endDate = dayjs(limitDate);
+            const daysDifference = dayjs(endDate).diff(startDate, "day");
+
+            for (let i = 0; i <= daysDifference; i++) {
+                const currentDate = startDate
+                    .add(i, "day")
+                    .format("YYYY-MM-DD");
+                const currentEndDate = dayjs(allEnd)
+                    .add(i, "day")
+                    .format("YYYY-MM-DD");
+                console.log(currentEndDate);
+                counterHandler(
+                    title,
+                    contents,
+                    currentDate,
+                    currentEndDate,
+                    color,
+                    url,
+                    typeNum,
+                    limitDate,
+                );
+            }
+        } else {
+            const startDate = dayjs(repeat);
+            const endDate = dayjs(repeatE);
+            const enddaysDifference = endDate.diff(startDate, "day");
+
+            for (let i = 0; i <= enddaysDifference; i++) {
+                const currentDate = startDate
+                    .add(i, "day")
+                    .format("YYYY-MM-DD");
+                counterHandler(
+                    title,
+                    contents,
+                    currentDate,
+                    endDate,
+                    color,
+                    url,
+                    typeNum,
+                    limitDate,
+                );
+            }
+        }
+    };
+
     const sendingData = () => {
-        //FixCardHandler(title, contents, repeatE, endDate, color, url, repeatId);
-        counterHandler(
-            title,
-            contents,
-            repeatE,
-            endDate,
-            color,
-            url,
-            repeatCardType,
-        );
+        Fix === true
+            ? FixCardHandler(
+                  id,
+                  title,
+                  contents,
+                  typeNum === 1 ? allStart : repeat,
+                  typeNum === 1 ? allEnd : repeatE,
+                  color,
+                  url,
+                  typeNum,
+                  limitDate,
+              )
+            : repeatCard();
         setForm({
             title: "",
             contents: "",
@@ -148,6 +311,7 @@ function Card() {
             endDate: "",
             color: "",
         });
+        dispatch(cardmodal());
     };
 
     return (
@@ -159,7 +323,7 @@ function Card() {
                     </div>
 
                     <div onClick={cardHandler}>
-                        {cardType === true ? (
+                        {Fix === true ? (
                             <div onClick={deleteHandler}>
                                 <Trash />
                             </div>
@@ -220,7 +384,9 @@ function Card() {
                         />
                     </div>
                 </div>
-                <div className="selectColor">{/* <ColorSelector /> */}</div>
+                <div className="selectColor">
+                    <ColorList />
+                </div>
             </div>
         </div>
     );

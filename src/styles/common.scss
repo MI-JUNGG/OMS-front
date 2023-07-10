@@ -1,9 +1,35 @@
 * {
     box-sizing: border-box;
-    // font-family: "Nanum";
+    user-select: none;
+    font-family: "Pretendard";
 }
 
 body {
     background-color: var(--background-color);
     margin: 0;
+    font-weight: var(--global-font-weight);
+    font-style: var(--global-font-style);
+    text-decoration: var(--global-text-decoration);
+}
+
+.text-regular {
+    font-weight: normal;
+    font-style: normal;
+    text-decoration: none !important;
+}
+.text-bold {
+    font-weight: bold;
+    font-style: normal;
+    text-decoration: none !important;
+}
+.text-italic {
+    font-weight: normal;
+    font-style: italic;
+    text-decoration: none !important;
+}
+
+.text-underline {
+    font-weight: normal;
+    font-style: normal;
+    text-decoration: underline;
 }

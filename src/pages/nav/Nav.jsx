@@ -13,8 +13,20 @@ import {
     password,
     confirmPassword,
 } from "../../modules/module/user";
+import { useNavigate, useLocation } from "react-router";
+import { getData } from "../myPage/getData";
+import { useState, useEffect } from "react";
+import dayjs from "dayjs";
 
 function Nav() {
+    const location = useLocation();
+
+    // myPage 경로인 경우 Nav 컴포넌트를 숨김
+    if (location.pathname === "/myPage") {
+        return null;
+    }
+
+    const navigate = useNavigate();
     const isLoginModal = useSelector(
         (state) => state.loginModalReducer.loginModal,
     );
@@ -29,10 +41,34 @@ function Nav() {
         dispatch(confirmPassword(""));
     };
 
+    const moveMypage = () => {
+        navigate("/myPage");
+    };
+    const moveHomePage = () => {
+        const currentDate = new Date();
+        const year = currentDate.getFullYear();
+        const month = currentDate.getMonth() + 1;
+        const lastDay = new Date(year, month, 0);
+
+        const startDate = `${year}-${month.toString().padStart(2, "0")}-01`;
+        const endDate = `${year}-${month
+            .toString()
+            .padStart(2, "0")}-${lastDay.getDate()}`;
+
+        const url = `/month?date=${startDate}&date=${endDate}`;
+
+        window.location.href = url;
+    };
+
+    const [userNickname, setUserNickname] = useState("");
+    useEffect(() => {
+        getData("myPageUserInfo.json", setUserNickname, null);
+    }, []);
+
     return (
         <>
             <div className="navWrapper">
-                <div className="logo">
+                <div className="logo" onClick={moveHomePage}>
                     <img
                         src="/src/assets/images/logo/logo.svg"
                         alt="Oh My Calendar"
@@ -42,6 +78,9 @@ function Nav() {
                 <div className="login">
                     {localStorage.getItem("token") ? (
                         <>
+                            <span className="nickName" onClick={moveMypage}>
+                                {userNickname.nickname}
+                            </span>
                             <span
                                 className="loginText"
                                 onClick={() => {

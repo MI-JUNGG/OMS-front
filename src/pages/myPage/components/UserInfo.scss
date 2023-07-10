@@ -1,14 +1,14 @@
 $MyPageFontColor: #58595b;
 
 .userInfoContainer {
-    width: 79vw;
+    width: calc(100vw - 331px);
     min-width: 600px;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-
     padding-bottom: 50px;
+    background-color: #ffffff;
 
     .userInfoBox {
         width: 600px;
@@ -55,6 +55,36 @@ $MyPageFontColor: #58595b;
                 border: none;
                 cursor: pointer;
             }
+        }
+    }
+}
+.contentSelector {
+    flex-direction: column;
+
+    .socialLoginHead {
+        display: flex;
+        justify-content: center;
+
+        .socialLoginTitle {
+            color: $MyPageFontColor;
+            cursor: pointer;
+            font-size: 30px;
+            height: 65px;
+        }
+
+        img {
+            width: 50px;
+            height: 50px;
+        }
+    }
+    .socialLoginContents {
+        text-align: left;
+
+        h3 {
+            margin: 20px auto;
+        }
+        span {
+            font-size: 32px;
         }
     }
 }

@@ -5,7 +5,7 @@ const ViewSlice = createSlice({
     initialState: {
         select: "Month",
         view: ["Month", "Week", "Day"],
-        element: ["/", "/weekly", "/daily"],
+        element: ["/month", "/weekly", "/day"],
     },
     reducers: {
         view: (state, action) => {

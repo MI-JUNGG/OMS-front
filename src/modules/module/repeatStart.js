@@ -4,9 +4,6 @@ function getDaysInMonth(year, month) {
     return new Date(year, month, 0).getDate();
 }
 
-// start: { year: null, month: null, day: null, time: 0, minute: 0 },
-// end: { year: null, month: null, day: null, time: 0, minute: 0 },
-
 const repeatdateSlice = createSlice({
     name: "date",
     initialState: {
@@ -15,6 +12,10 @@ const repeatdateSlice = createSlice({
         day: null,
     },
     reducers: {
+        newDate: (state, action) => {
+            const { year, month, day } = action.payload;
+            return { ...state, year: year, month: month, day: day };
+        },
         addTime: (state) => {
             let newTime = state.time + 1;
             if (newTime > 24) {
@@ -162,6 +163,7 @@ const repeatdateSlice = createSlice({
 });
 
 export const {
+    newDate,
     addDate,
     addDay,
     addMonth,

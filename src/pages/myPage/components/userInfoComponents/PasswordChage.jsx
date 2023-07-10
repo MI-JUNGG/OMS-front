@@ -2,6 +2,7 @@ import { useState } from "react";
 import {
     newPassword,
     password,
+    repeatNewPassword,
 } from "../../../../modules/module/userInfoChange";
 import "./PasswordChage.scss";
 import { useDispatch, useSelector } from "react-redux";
@@ -15,10 +16,11 @@ function PasswordChage() {
 
     const form = useSelector((state) => state.userInfoChangeReducer);
 
-    console.log(form);
-
     const inputNewpassword = (e) => {
         dispatch(newPassword(e.target.value));
+    };
+    const repeatNewpassword = (e) => {
+        dispatch(repeatNewPassword(e.target.value));
     };
 
     return (
@@ -47,6 +49,7 @@ function PasswordChage() {
                     className="passwordInput"
                     placeholder="비밀번호"
                     type="password"
+                    onChange={(e) => repeatNewpassword(e)}
                 />
             </div>
         </div>

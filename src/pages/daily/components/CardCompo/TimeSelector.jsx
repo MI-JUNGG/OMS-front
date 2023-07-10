@@ -16,7 +16,6 @@ function TimeSelector() {
     };
 
     const decreaseday = () => {
-        console.log(1);
         isRepeat ? dispatch(eminusTime()) : dispatch(minusTime());
     };
 

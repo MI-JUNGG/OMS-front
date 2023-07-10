@@ -3,16 +3,16 @@ import { createSlice } from "@reduxjs/toolkit";
 const temporaryColorSetting = createSlice({
     name: "temporaryColorSetting",
     initialState: {
-        temporaryMainColor: "#547aff",
-        temporaryBackgroundColor: "#f3f6ff",
+        temporaryMainColor: "",
+        temporaryBackgroundColor: "",
         temporaryTextStyle: "",
-        temporaryTextColor: "dark",
+        temporaryTextColor: "",
         temporaryBlockColor: {
             mainColor: "",
             bgColor: "",
         },
-        temporaryBlockColorTheme: "0",
-        temporaryBlockColorThemeTitle: "vivid",
+        temporaryBlockColorTheme: "",
+        temporaryBlockColorThemeTitle: "",
     },
     reducers: {
         temporaryMainColor: (state, action) => {

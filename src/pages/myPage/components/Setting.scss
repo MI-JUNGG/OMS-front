@@ -1,11 +1,14 @@
 .settingContainer {
-    width: 79vw;
+    width: calc(100vw - 331px);
     min-width: 600px;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #ffffff;
 
     .settingContents {
         width: 968px;
+        height: 100vh;
+        min-width: 968px;
     }
 }

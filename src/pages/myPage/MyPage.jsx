@@ -2,10 +2,24 @@ import UserInfo from "./components/UserInfo";
 import Setting from "./components/Setting";
 import "./MyPage.scss";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import { getData, API, token } from "./getData";
+import axios from "axios";
 
 function MyPage() {
     const navigate = useNavigate();
+
+    const setting = useSelector((state) => state.settingReducer);
+    document.documentElement.style.setProperty(
+        "--main-color",
+        setting.mainColor,
+    );
+
+    const [userInfo, setUserInfo] = useState(null);
+    // useEffect(() => {
+    //     getData("myPageUserInfo.json", setUserInfo, null);
+    // }, []);
 
     const PAGE_STATE = [
         {
@@ -17,7 +31,7 @@ function MyPage() {
         {
             id: 1,
             title: "회원정보",
-            content: <UserInfo />,
+            content: <UserInfo userInfo={userInfo} />,
             img: "/src/assets/images/mypage/mypage_mypage.svg",
         },
         {
@@ -40,6 +54,25 @@ function MyPage() {
         navigate("/");
     };
 
+    const secession = () => {
+        if (window.confirm("확인을 누르면 회원 정보가 삭제됩니다.")) {
+            axios
+                .delete(`${API}/auth/deleteUser`, {
+                    headders: {
+                        Authorization: `${token}`,
+                    },
+                })
+                .then((res) => {
+                    console.log(res);
+                })
+                .catch((err) => {
+                    console.log(err);
+                });
+        } else {
+            return;
+        }
+    };
+
     return (
         <>
             <div className="myPageContainer">
@@ -53,7 +86,12 @@ function MyPage() {
                             <span>NickName</span>
                             <div className="logOutZone">
                                 <span onClick={logout}>로그아웃</span>
-                                <span className="withDrawal">회원탈퇴</span>
+                                <span
+                                    className="withDrawal"
+                                    onClick={secession}
+                                >
+                                    회원탈퇴
+                                </span>
                             </div>
                         </div>
                     </div>

@@ -9,7 +9,7 @@ $FontColor: #ffffff;
         width: 314px;
         min-width: 314px;
         height: 100vh;
-        background-color: $MainColor;
+        background-color: var(--main-color);
         border-radius: 0 15px 15px 0;
         color: $FontColor;
 

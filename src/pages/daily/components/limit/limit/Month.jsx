@@ -7,7 +7,7 @@ function Month() {
     const dispatch = useDispatch();
     const outerRef = useRef(null);
     const month = useSelector((state) => state.limitReducer.month);
-    console.log(month);
+
     const increaseMon = () => {
         dispatch(lPlusM());
     };

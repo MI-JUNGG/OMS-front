@@ -4,6 +4,19 @@ import axios from "axios";
 
 function KakoCallback() {
     const code = new URL(window.location.href).searchParams.get("code");
+
+    const currentDate = new Date();
+    const year = currentDate.getFullYear();
+    const month = currentDate.getMonth() + 1;
+    const lastDay = new Date(year, month, 0);
+
+    const startDate = `${year}-${month.toString().padStart(2, "0")}-01`;
+    const endDate = `${year}-${month
+        .toString()
+        .padStart(2, "0")}-${lastDay.getDate()}`;
+
+    const url = `/month?date=${startDate}&date=${endDate}`;
+
     useEffect(() => {
         axios
             .post(
@@ -17,12 +30,38 @@ function KakoCallback() {
                 },
             )
             .then((res) => {
-                console.log("b");
                 console.log(res);
                 const accessToken = res.data.access_token;
                 localStorage.setItem("token", accessToken);
                 alert("성공적으로 로그인 했습니다");
-                window.location.replace("/");
+                //백엔드에 넘겨주기
+                axios
+                    .post(
+                        "http://10.99.230.245:3001/auth/kakao",
+                        {
+                            kakaoToken: localStorage.getItem("token"),
+                        },
+                        {
+                            headers: {
+                                Authorization: localStorage.getItem("token"),
+                                " Content-type":
+                                    "application/x-www-form-urlencoded;charset=utf-8",
+                            },
+                        },
+                    )
+                    .then((response) => {
+                        console.log(response);
+                        localStorage.setItem(
+                            "token",
+                            response.data.accessToken,
+                        );
+                        // window.location.replace("/");
+                    })
+                    .then((error) => {
+                        console.log(error);
+                    });
+
+                window.location.href = url;
             })
             .then((err) => console.log(err));
     }, [code]);

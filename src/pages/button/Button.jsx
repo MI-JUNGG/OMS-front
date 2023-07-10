@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Plus from "./components/Plus";
 import BtnDropdown from "./BtnDropdown";
+import "./Button.scss";
 
 function Button() {
     const [isopen, setIsopen] = useState(false);
@@ -10,7 +11,7 @@ function Button() {
     return (
         <div className="Btn">
             {isopen && <BtnDropdown />}
-            <div onClick={openModal}>
+            <div className="plus" onClick={openModal}>
                 <Plus />
             </div>
         </div>

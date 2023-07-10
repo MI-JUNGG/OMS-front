@@ -1,21 +1,20 @@
 import axios from "axios";
 import { API, token } from "../daily/server";
 
-export const callData = (data, start, end) => {
-    console.log(start);
+export const callData = (dateState, startDate, endDate) => {
+    console.log(`${API}/week`);
     axios
         .get(`${API}/week`, {
             params: {
-                startDate: start,
-                endDate: end,
+                startDate: startDate,
+                endDate: endDate,
             },
             headers: {
                 Authorization: token,
             },
         })
         .then((response) => {
-            console.log(response.data);
-            data(response.data);
+            dateState(response.data);
         })
         .catch((err) => {
             console.log(err);

@@ -6,7 +6,7 @@ import "../../CardCompo/YearSelector.scss";
 function Year() {
     const outerRef = useRef(null);
     const dispatch = useDispatch();
-    const year = useSelector((state) => state.limitReducer.year);
+    const year = Number(useSelector((state) => state.limitReducer.year));
 
     const increaseYear = () => {
         return dispatch(lPlusY());

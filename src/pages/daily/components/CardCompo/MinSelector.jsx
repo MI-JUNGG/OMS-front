@@ -14,7 +14,6 @@ function MinSelector() {
     const minute = isRepeat ? endMin : startminute;
 
     const increaseday = () => {
-        console.log(1);
         isRepeat ? dispatch(eaddMin()) : dispatch(addMin());
     };
 

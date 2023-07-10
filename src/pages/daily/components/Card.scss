@@ -35,6 +35,12 @@
         left: 50%;
         transform: translate(-50%, -50%);
 
+        .selectColor {
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
         .iconBtn {
             width: 80%;
             display: flex;

@@ -59,7 +59,7 @@ function EndDay() {
         <div className="monthControll" ref={outerRef}>
             {parseInt(DAY) === 1 ? <p>{lastDayOfMonth}</p> : <p>{DAYMius}</p>}
             <p className="now">{DAY}</p>
-            {parseInt(DAY) === lastDayOfMonth ? <p>0å1</p> : <p>{DAYPlus}</p>}
+            {parseInt(DAY) === lastDayOfMonth ? <p>01</p> : <p>{DAYPlus}</p>}
         </div>
     );
 }

@@ -1,0 +1,29 @@
+.blockColorSelect {
+    display: flex;
+    align-items: center;
+
+    .active {
+        border: 2px solid var(--main-color);
+        border-radius: 100px;
+        padding: 2px;
+        margin-right: 20px;
+    }
+
+    .inactive {
+        cursor: pointer;
+        justify-content: center;
+        margin-right: 20px;
+    }
+
+    .blockColorVivid {
+        width: 30px;
+        height: 30px;
+        border-radius: 100px;
+
+        cursor: pointer;
+        border: 1px solid lightgray;
+    }
+    .moreColor {
+        cursor: pointer;
+    }
+}

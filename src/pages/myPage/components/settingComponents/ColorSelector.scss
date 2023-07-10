@@ -16,9 +16,17 @@ $--temporarybackgroundColor: "";
 
             .mainColorList {
                 display: flex;
+                align-items: center;
 
-                div {
+                .active {
+                    border: 2px solid var(--temporaryMainColor);
+                    border-radius: 100px;
+                    padding: 2px;
+                }
+
+                .inActive {
                     cursor: pointer;
+                    justify-content: center;
                 }
             }
         }
@@ -26,8 +34,16 @@ $--temporarybackgroundColor: "";
         .bgColorSelect {
             .bgColorList {
                 display: flex;
-                div {
+                align-items: center;
+                .active {
+                    border: 2px solid gray;
+                    border-radius: 100px;
+                    padding: 2px;
+                }
+
+                .inActive {
                     cursor: pointer;
+                    justify-content: center;
                 }
             }
         }

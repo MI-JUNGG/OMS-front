@@ -1,15 +1,18 @@
 .navWrapper {
     height: 96px;
+    // width: 100vw;
+    min-width: 860px;
     padding: 30px 50px;
     background-color: transparent;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #547aff;
+    background-color: var(--main-color);
     position: relative;
 
     .logo {
         white-space: pre-line;
+        cursor: pointer;
 
         img {
             width: 118px;
@@ -18,14 +21,15 @@
     }
 
     .login {
-        width: 120px;
         text-align: center;
-        .loginText {
+
+        .nickName {
             cursor: pointer;
             color: white;
+            margin-right: 32px;
         }
 
-        .signUp {
+        .loginText {
             cursor: pointer;
             color: white;
         }
