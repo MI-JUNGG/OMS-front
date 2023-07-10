@@ -24,7 +24,7 @@ import {
 import LoginModalBackground from "./sign/LoginModalBackground";
 import dayjs from "dayjs";
 import Card from "./daily/components/Card";
-import MoreSchedule from "./monthComponent/moreSchedule";
+import MoreSchedule from "./monthComponent/MoreSchedule";
 
 function Main() {
     const yearForm = useSelector((state) => state.yearReducer.value);
