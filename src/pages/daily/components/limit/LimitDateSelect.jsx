@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { limitControl } from "../../../../modules/module/modal";
+import { limitControl } from "../../../../modules/module/modal.js";
 import Year from "./limit/Year.jsx";
 import Month from "./limit/Month.jsx";
 import Day from "./limit/Day.jsx";

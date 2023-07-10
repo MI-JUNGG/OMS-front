@@ -1,25 +1,25 @@
 // store.js
 
 import { configureStore } from "@reduxjs/toolkit";
-import cardReducer from "./module/card";
-import monthReducer from "./module/monthPicker";
-import viewReducer from "./module/viewSelector";
-import yearReducer from "./module/year";
-import modalReducer from "./module/modal";
-import signReducer from "./module/sign";
-import userReducer from "./module/user";
-import loginReducer from "./module/login";
-import loginModalReducer from "./module/loginModal";
-import dateReducer from "./module/date";
-import endDateReducer from "./module/endDate";
-import settingReducer from "./module/setting";
-import repeatEndReducer from "./module/repeatEnd";
-import repeatStartReducer from "./module/repeatStart";
-import limitReducer from "./module/Limit";
-import userInfoChangeReducer from "./module/userInfoChange";
-import colorPickerReducer from "./module/colorPicker";
-import temporaryColorReducer from "./module/temporaryColorSetting";
-import repeatTypeReducer from "./module/repeatType";
+import cardReducer from "./module/card.js";
+import monthReducer from "./module/monthPicker.js";
+import viewReducer from "./module/viewSelector.js";
+import yearReducer from "./module/year.js";
+import modalReducer from "./module/modal.js";
+import signReducer from "./module/sign.js";
+import userReducer from "./module/user.js";
+import loginReducer from "./module/login.js";
+import loginModalReducer from "./module/loginModal.js";
+import dateReducer from "./module/date.js";
+import endDateReducer from "./module/endDate.js";
+import settingReducer from "./module/setting.js";
+import repeatEndReducer from "./module/repeatEnd.js";
+import repeatStartReducer from "./module/repeatStart.js";
+import limitReducer from "./module/Limit.js";
+import userInfoChangeReducer from "./module/userInfoChange.js";
+import colorPickerReducer from "./module/colorPicker.js";
+import temporaryColorReducer from "./module/temporaryColorSetting.js";
+import repeatTypeReducer from "./module/repeatType.js";
 
 const store = configureStore({
     reducer: {

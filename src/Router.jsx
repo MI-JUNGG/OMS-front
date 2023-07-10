@@ -8,7 +8,7 @@ import {
     main,
     textColor,
     textStyle,
-} from "../src/modules/module/setting";
+} from "../src/modules/module/setting.js";
 import {
     temporaryMainColor,
     temporaryBackgroundColor,
@@ -16,14 +16,14 @@ import {
     temporaryTextStyle,
     temporaryBlockColorTheme,
     temporaryBlockColorThemeTitle,
-} from "../src/modules/module/temporaryColorSetting";
-import Daily from "./pages/daily/Daily";
-import Nav from "./pages/nav/Nav";
-import Week from "./pages/weekly/Week";
-import MyPage from "./pages/myPage/MyPage";
-import KakoCallback from "./pages/sign/KakoCallback";
-import NaverCallback from "./pages/sign/NaverCallback";
-import Main from "./pages/Main";
+} from "../src/modules/module/temporaryColorSetting.js";
+import Daily from "./pages/daily/Daily.jsx";
+import Nav from "./pages/nav/Nav.jsx";
+import Week from "./pages/weekly/Week.jsx";
+import MyPage from "./pages/myPage/MyPage.jsx";
+import KakoCallback from "./pages/sign/KakoCallback.jsx";
+import NaverCallback from "./pages/sign/NaverCallback.jsx";
+import Main from "./pages/Main.jsx";
 
 function Router() {
     const dispatch = useDispatch();

@@ -10,7 +10,7 @@ import {
     handleBlockColor,
     handleBlockColorThemeTitle,
     handleBlockColorTheme,
-} from "../../../../modules/module/setting";
+} from "../../../../modules/module/setting.js";
 import {
     temporaryMainColor,
     temporaryBackgroundColor,
@@ -19,7 +19,7 @@ import {
     temporaryBlockMainColor,
     temporaryBlockColorTheme,
     temporaryBlockColorThemeTitle,
-} from "../../../../modules/module/temporaryColorSetting";
+} from "../../../../modules/module/temporaryColorSetting.js";
 
 function Buttons() {
     const dispatch = useDispatch();

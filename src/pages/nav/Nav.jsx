@@ -14,7 +14,7 @@ import {
     confirmPassword,
 } from "../../modules/module/user.js";
 import { useNavigate, useLocation } from "react-router";
-import { getData } from "../myPage/getData";
+import { getData } from "../myPage/getData.js";
 import { useState, useEffect } from "react";
 import dayjs from "dayjs";
 
